@@ -1,9 +1,15 @@
 package com.xiao.boot.config;
 
+import ch.qos.logback.classic.db.DBHelper;
+import com.xiao.boot.bean.Car;
 import com.xiao.boot.bean.Pet;
 import com.xiao.boot.bean.User;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * 1、配置类里面使用@Bean标注在方法上给容器注册组件，默认也是单实例的
@@ -12,7 +18,11 @@ import org.springframework.context.annotation.Configuration;
  *      Full(proxyBeanMethods = true)（保证每个@Bean方法被调用多少次返回的组件都是单实例的）（默认）
  *      Lite(proxyBeanMethods = false)（每个@Bean方法被调用多少次返回的组件都是新创建的）
  */
+@Import({User.class, DBHelper.class})
 @Configuration(proxyBeanMethods = true) //告诉SpringBoot这是一个配置类 == 配置文件
+@ConditionalOnMissingBean(name = "tom")//没有tom名字的Bean时，MyConfig类的Bean才能生效。
+@ImportResource("classpath:beans.xml")
+@EnableConfigurationProperties(Car.class)
 public class MyConfig {
 
     /**
@@ -31,5 +41,7 @@ public class MyConfig {
     public Pet tomcatPet(){
         return new Pet("tomcat");
     }
+
+
 }
 

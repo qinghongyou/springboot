@@ -9,7 +9,7 @@
         <property name="age" value="18"></property>
     </bean>
 
-    <bean id="hehe" class="com.lun.boot.bean.Pet">
+    <bean id="hehe" class="com.xiao.boot.bean.Pet">
         <property name="name" value="tomcat"></property>
     </bean>
 </beans>

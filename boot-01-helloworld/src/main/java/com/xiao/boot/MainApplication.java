@@ -1,5 +1,7 @@
 package com.xiao.boot;
 
+import ch.qos.logback.classic.db.DBHelper;
+import com.xiao.boot.bean.Car;
 import com.xiao.boot.bean.Pet;
 import com.xiao.boot.bean.User;
 import com.xiao.boot.config.MyConfig;
@@ -43,6 +45,33 @@ public class MainApplication {
 
         System.out.println("用户的宠物："+(user01.getPet() == tom));
 
+        //5、获取组件
+        String[] beanNamesForType = run.getBeanNamesForType(User.class);
+
+        for (String s : beanNamesForType) {
+            System.out.println(s);
+        }
+
+        DBHelper bean1 = run.getBean(DBHelper.class);
+        System.out.println(bean1);
+
+        boolean tom11 = run.containsBean("tom");
+        System.out.println("容器中Tom组件："+tom11);//false
+
+        boolean user011 = run.containsBean("user01");
+        System.out.println("容器中user01组件："+user011);//true
+
+        boolean tom22 = run.containsBean("tom22");
+        System.out.println("容器中tom22组件："+tom22);//true
+
+        boolean haha = run.containsBean("haha");
+        boolean hehe = run.containsBean("hehe");
+        System.out.println("haha："+haha);//true
+        System.out.println("hehe："+hehe);//true
+
+        Car car = run.getBean(Car.class);
+        System.out.println("car brand："+car.getBrand());
+        System.out.println("car price："+car.getPrice());
 
     }
 }
