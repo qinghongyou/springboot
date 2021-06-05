@@ -3,3 +3,9 @@
 #    static-path-pattern: /res/**
 #  resources:
 #    static-locations: [classpath:/xiao/]
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true   #开启页面表单的Rest功能
+
