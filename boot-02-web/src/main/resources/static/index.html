@@ -16,13 +16,27 @@
 
 <form action="/user" method="post">
     <input name="_method" type="hidden" value="DELETE"/>
+    <input name="_m" type="hidden" value="DELETE"/>
     <input value="REST-DELETE 提交" type="submit"/>
 </form>
 
 <form action="/user" method="post">
     <input name="_method" type="hidden" value="PUT" />
+    <input name="_m" type="hidden" value="PUT" />
     <input value="REST-PUT提交"type="submit" />
-    <form>
+<form>
+
+<br/>
+    <a href="/car/3/owner/lisi?age=20&inters=games">/car/{id}/owner/{username}</a>
+
+
+<br/>
+    <a href="/cars/sell;low=34;brand=byd,audi,yd">MatrixVariable矩阵变量</a>
+
+    <br/>
+
+    <a href="/boss/1;age=20/2;age=10">MatrixVariable矩阵变量 /boss/1;age=20/2;age=10</a>
+
 
 </body>
 </html>
