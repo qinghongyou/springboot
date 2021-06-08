@@ -11,6 +11,8 @@
     <modules>
         <module>boot-01-helloworld</module>
         <module>boot-02-web</module>
+        <module>boot-java</module>
+        <module>boot-javabase</module>
     </modules>
 
 
