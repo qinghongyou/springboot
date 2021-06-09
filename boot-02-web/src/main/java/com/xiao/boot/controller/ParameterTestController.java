@@ -1,5 +1,6 @@
 package com.xiao.boot.controller;
 
+import com.xiao.boot.bean.Person;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
@@ -75,6 +76,16 @@ public class ParameterTestController {
         map.put("empAge",empAge);
         return map;
 
+    }
+
+    /**
+     * 数据绑定：页面提交的请求数据（GET、POST）都可以和对象属性进行绑定
+     * @param person
+     * @return
+     */
+    @PostMapping("/saveuser")
+    public Person saveuser(Person person){
+        return person;
     }
 
 }
