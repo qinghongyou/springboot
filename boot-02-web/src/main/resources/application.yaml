@@ -11,3 +11,8 @@ spring:
     contentnegotiation:
       favor-parameter: true  #开启请求参数内容协商模式
 
+server:
+  servlet:
+    context-path: /app #设置应用名
+
+
