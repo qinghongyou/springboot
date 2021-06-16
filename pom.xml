@@ -13,6 +13,7 @@
         <module>boot-02-web</module>
         <module>boot-java</module>
         <module>boot-javabase</module>
+        <module>boot-03-web-admin</module>
     </modules>
 
 
@@ -40,6 +41,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

@@ -10,6 +10,7 @@
         <module name="boot-javabase" />
         <module name="boot-01-helloworld" />
         <module name="boot-02-web" />
+        <module name="boot-03-web-admin" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +18,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="boot-01-helloworld" options="-parameters" />
       <module name="boot-02-web" options="-parameters" />
+      <module name="boot-03-web-admin" options="-parameters" />
       <module name="boot-javabase" options="-parameters" />
     </option>
   </component>
