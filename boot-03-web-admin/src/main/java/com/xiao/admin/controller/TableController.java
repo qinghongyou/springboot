@@ -1,6 +1,7 @@
 package com.xiao.admin.controller;
 
 
+import com.xiao.admin.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,7 +39,7 @@ public class TableController {
 //                new User("lisi", "123444"),
 //                new User("haha", "aaaaa"),
 //                new User("hehe ", "aaddd"));
-//        model.addAttribute("users",users);
+//     model.addAttribute("users",users);
 //
 //        if(users.size()>3){
 //            throw new UserTooManyException();
