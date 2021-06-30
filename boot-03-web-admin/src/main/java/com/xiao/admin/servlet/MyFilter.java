@@ -12,6 +12,10 @@ public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         log.info("MyFilter初始化完成");
+        log.info("MyFilter初始化完成");
+        log.info("MyFilter初始化完成");
+        log.info("MyFilter初始化完成");
+        log.info("MyFilter初始化完成");
     }
 
     @Override
