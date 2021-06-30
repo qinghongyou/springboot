@@ -25,5 +25,8 @@ public class User {
     private Integer age;
     private String email;
 
-
+    public User(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
 }

@@ -2,6 +2,7 @@ package com.xiao.admin.controller;
 
 
 import com.xiao.admin.bean.User;
+import com.xiao.admin.exception.UserTooManyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,15 +36,15 @@ public class TableController {
     public String dynamic_table(@RequestParam(value="pn",defaultValue = "1") Integer pn,Model model){
         //表格内容的遍历
 //        response.sendError
-//     List<User> users = Arrays.asList(new User("zhangsan", "123456"),
-//                new User("lisi", "123444"),
-//                new User("haha", "aaaaa"),
-//                new User("hehe ", "aaddd"));
-//     model.addAttribute("users",users);
-//
-//        if(users.size()>3){
-//            throw new UserTooManyException();
-//        }
+         List<User> users = Arrays.asList(new User("zhangsan", "123456"),
+                    new User("lisi", "123444"),
+                    new User("haha", "aaaaa"),
+                    new User("hehe ", "aaddd"));
+         model.addAttribute("users",users);
+
+        if(users.size()>3){
+            throw new UserTooManyException();
+        }
         //从数据库中查出user表中的用户进行展示
 
         //构造分页参数
