@@ -1,9 +1,12 @@
 package com.xiao.admin;
 
 
+import com.xiao.admin.bean.User;
+import com.xiao.admin.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 
 import org.junit.jupiter.api.Test;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,6 +16,7 @@ import javax.sql.DataSource;
 
 @Slf4j
 @SpringBootTest
+@MapperScan("com.xiao.admin")
 class Boot05WebAdminApplicationTests {
 
     @Autowired
@@ -21,8 +25,8 @@ class Boot05WebAdminApplicationTests {
     @Autowired
     DataSource dataSource;
 
-//    @Autowired
-//    UserMapper userMapper;
+    @Autowired
+    UserMapper userMapper;
 
 //    @Autowired
 //    StringRedisTemplate redisTemplate;
@@ -42,11 +46,11 @@ class Boot05WebAdminApplicationTests {
 
     }
 
-//    @Test
-//    void testUserMapper(){
-//        User user = userMapper.selectById(1L);
-//        log.info("用户信息：{}",user);
-//    }
+    @Test
+    void testUserMapper(){
+        User user = userMapper.selectById(1L);
+        log.info("用户信息：{}",user);
+    }
 
 //    @Test
 //    void testRedis(){

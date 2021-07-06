@@ -68,10 +68,10 @@ spring:
 
 # 配置mybatis规则、使用MyBatisPlus则此项配置无效
 mybatis:
-  config-location: classpath:mybatis/mybatis-config.xml
+#  config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
-  configuration:  # 指定mybatis全局配置文件中的相关配置项
-    map-underscore-to-camel-case: true
+#  configuration:  # 指定mybatis全局配置文件中的相关配置项
+#    map-underscore-to-camel-case: true
 
 
 # management 是所有actuator的配置
