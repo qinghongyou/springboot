@@ -1,8 +1,10 @@
 package com.xiao.admin.controller;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xiao.admin.bean.User;
 import com.xiao.admin.exception.UserTooManyException;
+import com.xiao.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,9 @@ import java.util.List;
 
 @Controller
 public class TableController {
+
+    @Autowired
+    UserService userService;
 
 
     /**
@@ -46,19 +51,21 @@ public class TableController {
 //            throw new UserTooManyException();
 //        }
         //从数据库中查出user表中的用户进行展示
+//        List<User> list = userService.list();
+//        model.addAttribute("users",list);
 
         //构造分页参数
-//        Page<User> page = new Page<>(pn, 2);
-//        //调用page进行分页
-//        Page<User> userPage = userService.page(page, null);
+        Page<User> page = new Page<>(pn, 2);
+        //调用page进行分页
+        Page<User> userPage = userService.page(page, null);
 
 
-//        userPage.getRecords()
-//        userPage.getCurrent()
-//        userPage.getPages()
+        userPage.getRecords();
+        userPage.getCurrent();
+        userPage.getPages();
 
 
-//        model.addAttribute("users",userPage);
+        model.addAttribute("users",userPage);
 
         return "table/dynamic_table";
     }
