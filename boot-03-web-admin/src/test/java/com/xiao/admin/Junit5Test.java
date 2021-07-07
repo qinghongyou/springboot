@@ -51,7 +51,7 @@ public class Junit5Test {
         Object obj1 = new Object();
         Object obj2 = new Object();
         assertSame(obj1, obj2, "两个对象不一样");
-
+        System.out.println("1");
     }
 
     @Test
