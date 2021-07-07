@@ -35,7 +35,16 @@ public class TableController {
         return "table/basic_table";
     }
 
+    @GetMapping("/user/delete/{id}")
+    public String deleteUser(@PathVariable("id") Long id,
+                             @RequestParam(value = "pn",defaultValue = "1")Integer pn,
+                             RedirectAttributes ra){
 
+        userService.removeById(id);
+
+        ra.addAttribute("pn",pn);
+        return "redirect:/dynamic_table";
+    }
 
     @GetMapping("/dynamic_table")
     public String dynamic_table(@RequestParam(value="pn",defaultValue = "1") Integer pn,Model model){

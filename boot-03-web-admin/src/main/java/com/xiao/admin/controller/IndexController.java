@@ -8,6 +8,8 @@ import com.xiao.admin.service.AccountService;
 import com.xiao.admin.service.CityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +33,9 @@ public class IndexController {
 
     @Autowired
     CityService cityService;
+
+    @Autowired
+    StringRedisTemplate redisTemplate;
 
     @ResponseBody
     @PostMapping("/city")
@@ -96,25 +101,25 @@ public class IndexController {
 
         log.info("当前方法是：{}","mainPage");
         //是否登录。  拦截器，过滤器
-        Object loginUser = session.getAttribute("loginUser");
-        if(loginUser != null){
-            return "main";
-        }else {
-            //回到登录页面
-            model.addAttribute("msg","请重新登录");
-            return "login";
-        }
-//        ValueOperations<String, String> opsForValue =
-//                redisTemplate.opsForValue();
-//
-//        String s = opsForValue.get("/main.html");
-//        String s1 = opsForValue.get("/sql");
-//
-//
-//        model.addAttribute("mainCount",s);
-//        model.addAttribute("sqlCount",s1);
+//        Object loginUser = session.getAttribute("loginUser");
+//        if(loginUser != null){
+//            return "main";
+//        }else {
+//            //回到登录页面
+//            model.addAttribute("msg","请重新登录");
+//            return "login";
+//        }
+        ValueOperations<String, String> opsForValue =
+                redisTemplate.opsForValue();
 
-//        return "main";
+        String s = opsForValue.get("/main.html");
+        String s1 = opsForValue.get("/sql");
+
+
+        model.addAttribute("mainCount",s);
+        model.addAttribute("sqlCount",s1);
+
+        return "main";
 
     }
 

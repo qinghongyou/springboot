@@ -34,19 +34,19 @@ spring:
 
 
 
-#  redis:
-#    host: r-bp1nc7reqesxisgxpipd.redis.rds.aliyuncs.com
-#    port: 6379
-#    password: lfy:Lfy123456
-#    client-type: jedis
-#    jedis:
-#      pool:
-#        max-active: 10
+  redis:
+    host: 127.0.0.1
+    port: 6379
+#    password: :
+    client-type: jedis
+    jedis:
+      pool:
+        max-active: 10
   #    url: redis://lfy:Lfy123456@r-bp1nc7reqesxisgxpipd.redis.rds.aliyuncs.com:6379
-#    lettuce:
-#      pool:
-#        max-active: 10
-#        min-idle: 5
+    lettuce:
+      pool:
+        max-active: 10
+        min-idle: 5
 
 
 

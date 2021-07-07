@@ -3,6 +3,7 @@ package com.xiao.admin.config;
 
 
 import com.xiao.admin.interceptor.LoginInterceptor;
+import com.xiao.admin.interceptor.RedisUrlCountInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcRegistrations;
 import org.springframework.context.annotation.Bean;
@@ -33,8 +34,8 @@ public class AdminWebConfig implements WebMvcConfigurer{
      * 2、Interceptor是Spring定义的接口。可以使用Spring的自动装配等功能
      *
      */
-//    @Autowired
-//    RedisUrlCountInterceptor redisUrlCountInterceptor;
+    @Autowired
+    RedisUrlCountInterceptor redisUrlCountInterceptor;
 
     /**
      * 定义静态资源行为
@@ -56,10 +57,10 @@ public class AdminWebConfig implements WebMvcConfigurer{
                 .excludePathPatterns("/","/login","/css/**","/fonts/**","/images/**",
                         "/js/**","/aa/**"); //放行的请求
 
-//        registry.addInterceptor(redisUrlCountInterceptor)
-//                .addPathPatterns("/**")
-//                .excludePathPatterns("/","/login","/css/**","/fonts/**","/images/**",
-//                        "/js/**","/aa/**");
+        registry.addInterceptor(redisUrlCountInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/","/login","/css/**","/fonts/**","/images/**",
+                        "/js/**","/aa/**");
     }
 
 //    @Bean
