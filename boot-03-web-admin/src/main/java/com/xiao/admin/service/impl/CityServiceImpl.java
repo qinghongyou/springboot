@@ -4,6 +4,8 @@ import com.xiao.admin.bean.City;
 import com.xiao.admin.mapper.CityMapper;
 import com.xiao.admin.service.CityService;
 
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +15,11 @@ public class CityServiceImpl implements CityService {
     @Autowired
     CityMapper cityMapper;
 
-//    Counter counter;
+    Counter counter;
 
-//    public CityServiceImpl(MeterRegistry meterRegistry){
-//        counter = meterRegistry.counter("cityService.saveCity.count");
-//    }
+    public CityServiceImpl(MeterRegistry meterRegistry){
+        counter = meterRegistry.counter("cityService.saveCity.count");
+    }
 
 
     public City getById(Long id){
