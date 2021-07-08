@@ -13,6 +13,7 @@
         <module>boot-02-web</module>
         <module>boot-javabase</module>
         <module>boot-03-web-admin</module>
+        <module>boot-04-adminservice</module>
     </modules>
 
 

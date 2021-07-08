@@ -51,17 +51,17 @@ spring:
 
 
   #    type: com.zaxxer.hikari.HikariDataSource
-#  jdbc:
-#    template:
-#      query-timeout: 3
-#  boot:
-#    admin:
-#      client:
-#        url: http://localhost:8888
-#        instance:
-#          prefer-ip: true  #使用ip注册进来
-#  application:
-#    name: boot-05-web-admin
+  jdbc:
+    template:
+      query-timeout: 3
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8888
+        instance:
+          prefer-ip: true  #使用ip注册进来
+  application:
+    name: boot-03-web-admin
 
 
 

@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-javabase" />
+        <module name="boot-04-adminservice" />
         <module name="boot-01-helloworld" />
         <module name="boot-02-web" />
         <module name="boot-03-web-admin" />
@@ -19,6 +20,7 @@
       <module name="boot-01-helloworld" options="-parameters" />
       <module name="boot-02-web" options="-parameters" />
       <module name="boot-03-web-admin" options="-parameters" />
+      <module name="boot-04-adminservice" options="-parameters" />
       <module name="boot-javabase" options="-parameters" />
     </option>
   </component>
