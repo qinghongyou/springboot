@@ -14,6 +14,10 @@
         <module>boot-javabase</module>
         <module>boot-03-web-admin</module>
         <module>boot-04-adminservice</module>
+        <module>boot-05-features-profile</module>
+        <module>boot-06-customer-starter</module>
+        <module>boot-07-starter-autoconfigure</module>
+        <module>boot-08-hello-test</module>
     </modules>
 
 
