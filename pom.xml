@@ -18,6 +18,7 @@
         <module>boot-06-customer-starter</module>
         <module>boot-07-starter-autoconfigure</module>
         <module>boot-08-hello-test</module>
+        <module>security-01-demo1</module>
     </modules>
 
 
