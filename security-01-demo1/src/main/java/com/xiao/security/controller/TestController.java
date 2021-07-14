@@ -21,6 +21,11 @@ public class TestController {
         return "hello security";
     }
 
+    @GetMapping("out")
+    public String out() {
+        return "退出成功！";
+    }
+
     @GetMapping("index")
     public String index() {
         return "hello index";
