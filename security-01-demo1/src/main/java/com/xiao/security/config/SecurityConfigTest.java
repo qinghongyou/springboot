@@ -22,17 +22,17 @@ public class SecurityConfigTest extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
 
     //注入数据源
-//    @Autowired
-//    private DataSource dataSource;
+    @Autowired
+    private DataSource dataSource;
 
     //配置对象
-//    @Bean
-//    public PersistentTokenRepository persistentTokenRepository() {
-//        JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
-//        jdbcTokenRepository.setDataSource(dataSource);
-//        //jdbcTokenRepository.setCreateTableOnStartup(true);
-//        return jdbcTokenRepository;
-//    }
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository() {
+        JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
+        jdbcTokenRepository.setDataSource(dataSource);
+        //jdbcTokenRepository.setCreateTableOnStartup(true);
+        return jdbcTokenRepository;
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
