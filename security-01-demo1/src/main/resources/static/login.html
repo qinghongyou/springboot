@@ -15,9 +15,10 @@
 <!-- 表单提交用户信息,注意字段的设置,直接是*{} -->
 <form action="/user/login"  method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-    <input type="text" name="username" />
-    <input type="text" name="password" />
-    <input type="submit" />
+    用户名：<input type="text" name="username" /><br>
+    密码：<input type="text" name="password" /><br>
+    <input type="checkbox" name="remember-me">自动登录<br>
+    <input type="submit" value="登录" />
 </form>
 </body>
 </html>

@@ -68,10 +68,10 @@ public class SecurityConfigTest extends WebSecurityConfigurerAdapter {
             .antMatchers("/test/index").hasRole("sale")
 
             .anyRequest().authenticated()
-            //.and().rememberMe().tokenRepository(persistentTokenRepository())
-            //.tokenValiditySeconds(60)//设置有效时长，单位秒
-            //.userDetailsService(userDetailsService);
-            // .and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+            .and().rememberMe().tokenRepository(persistentTokenRepository())
+            .tokenValiditySeconds(60)//设置有效时长，单位秒
+            .userDetailsService(userDetailsService)
+//             .and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
              .and().csrf().disable();  //关闭csrf防护
     }
 }
