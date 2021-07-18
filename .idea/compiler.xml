@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="boot-08-hello-test" />
         <module name="boot-05-features-profile" />
+        <module name="security-02-csrf" />
         <module name="boot-javabase" />
         <module name="boot-06-customer-starter" />
         <module name="security-01-demo1" />
@@ -32,6 +33,7 @@
       <module name="boot-08-hello-test" options="-parameters" />
       <module name="boot-javabase" options="-parameters" />
       <module name="security-01-demo1" options="-parameters" />
+      <module name="security-02-csrf" options="-parameters" />
     </option>
   </component>
 </project>
