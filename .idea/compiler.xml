@@ -8,16 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-08-hello-test" />
+        <module name="boot-04-adminservice" />
         <module name="boot-05-features-profile" />
         <module name="security-02-csrf" />
         <module name="boot-javabase" />
         <module name="boot-06-customer-starter" />
-        <module name="security-01-demo1" />
         <module name="boot-07-starter-autoconfigure" />
         <module name="boot-01-helloworld" />
         <module name="boot-03-web-admin" />
         <module name="boot-02-web" />
-        <module name="boot-04-adminservice" />
+        <module name="security-01-demo1" />
       </profile>
     </annotationProcessing>
   </component>
